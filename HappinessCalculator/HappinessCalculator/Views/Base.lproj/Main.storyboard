@@ -62,7 +62,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="higherorLowerLabel" destination="9Qr-9f-wuQ" id="8GP-c0-bEC"/>
+                                    <outlet property="higherOrLowerLabel" destination="9Qr-9f-wuQ" id="vNg-m7-gT0"/>
                                     <outlet property="isEnabledSwitch" destination="Y0P-qM-XG8" id="lpr-p6-u2N"/>
                                     <outlet property="titleLabel" destination="lca-xg-8F4" id="Cdp-9O-GpI"/>
                                 </connections>
