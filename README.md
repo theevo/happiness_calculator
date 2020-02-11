@@ -4,7 +4,7 @@ Average Happiness is a single view application that allows the user  to calculat
 ## Part 1 - StoryBoard
 The story board for this app is really simple. It consists of a `TableviewController` and a custom `UITableViewCell`
 
-![Screen shot of app that we want](/Users/trevorwalker/Desktop/HappinessCalculatorViewController.png)
+![Image of View we want](https://raw.githubusercontent.com/DevMountain/happiness_calculator/master/HappinessCalculatorViewController.png?token=AKMHBYAN6CEA7PIL3XA62EC6JQQXS)
 
 ## Part 2 - Create Model
 Our Model will contain three properties
