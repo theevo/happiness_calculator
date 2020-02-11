@@ -64,7 +64,7 @@ class EntryTableViewCell: UITableViewCell {
      */
     func calculateHappiness(averageHappiness: Int) -> String {
         guard let entry = entry else {return "Error: Happines Not Found"}
-        
+        print(averageHappiness)
         switch entry.happiness {
             //less than
         case  ..<averageHappiness:
@@ -74,7 +74,7 @@ class EntryTableViewCell: UITableViewCell {
             return "Average"
             //greater than or equal to
         case averageHappiness...:
-            return "Lower"
+            return "Higher"
         default:
             return "Error: Happines Not Found"
         }
