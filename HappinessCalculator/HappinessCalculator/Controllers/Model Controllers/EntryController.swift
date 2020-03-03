@@ -17,8 +17,9 @@ class EntryController {
         var entry4 = Entry(title: "Reading documentation", happiness: 10, isIncluded: false)
         return [entry1, entry2, entry3, entry4]
     }()
+    
     //Called when we want to update our Entry
-    func updateEntry(entry: Entry) {
+    static func updateEntry(entry: Entry) {
         entry.isIncluded = !entry.isIncluded
     }
 }
