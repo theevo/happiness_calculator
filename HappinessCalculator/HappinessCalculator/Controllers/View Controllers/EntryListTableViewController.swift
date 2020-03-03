@@ -16,6 +16,7 @@ class EntryListTableViewController: UITableViewController {
         // Property Observer
         didSet {
             NotificationCenter.default.post(name: notificationKey, object: self.averageHappiness)
+//            self.title = "Average Happiness: \()"
         }
     }
 
@@ -45,7 +46,7 @@ class EntryListTableViewController: UITableViewController {
         var totalHappiness = 0
         for entry in EntryController.entries {
             if entry.isIncluded {
-                totalHappiness += totalHappiness
+                totalHappiness += entry.happiness
             }
         }
         averageHappiness = totalHappiness / EntryController.entries.count
