@@ -23,6 +23,7 @@ class EntryCellTableViewCell: UITableViewCell {
     
     func setEntry(entry: Entry, averageHappiness: Int) {
         self.entry = entry
+        updateUI(averageHappiness: averageHappiness)
     }
     
     func updateUI(averageHappiness: Int) {
