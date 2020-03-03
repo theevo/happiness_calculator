@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Declaring a protocol and allowing it to use class-level objects
+
 protocol EntryTableViewCellDelegate: class {
     func switchToggledOnCell(cell: EntryCellTableViewCell)
 }
@@ -29,9 +31,10 @@ class EntryCellTableViewCell: UITableViewCell {
     func setEntry(entry: Entry, averageHappiness: Int) {
         self.entry = entry
         updateUI(averageHappiness: averageHappiness)
+        createObserver()
     }
     
-    @objc func updateUI(averageHappiness: Int) {
+    func updateUI(averageHappiness: Int) {
         guard let entryToDisplay = entry else { return }
         titleLabel.text = entryToDisplay.title
         isEnabledSwitch.isOn = entryToDisplay.isIncluded
@@ -40,7 +43,12 @@ class EntryCellTableViewCell: UITableViewCell {
     }
     
     func createObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: notificationKey, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(recalculateHappiness), name: notificationKey, object: nil)
+    }
+    
+    @objc func recalculateHappiness(notification: NSNotification) {
+        guard let averageHappiness = notification.object as? Int else { return }
+        updateUI(averageHappiness: averageHappiness)
     }
     
     @IBAction func toggleIsIncluded(_ sender: Any) {
