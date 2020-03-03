@@ -31,12 +31,16 @@ class EntryCellTableViewCell: UITableViewCell {
         updateUI(averageHappiness: averageHappiness)
     }
     
-    func updateUI(averageHappiness: Int) {
+    @objc func updateUI(averageHappiness: Int) {
         guard let entryToDisplay = entry else { return }
         titleLabel.text = entryToDisplay.title
         isEnabledSwitch.isOn = entryToDisplay.isIncluded
         higherOrLowerLabel.text = entryToDisplay.happiness >= averageHappiness ? "Higher" : "Lower"
         
+    }
+    
+    func createObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: notificationKey, object: nil)
     }
     
     @IBAction func toggleIsIncluded(_ sender: Any) {
