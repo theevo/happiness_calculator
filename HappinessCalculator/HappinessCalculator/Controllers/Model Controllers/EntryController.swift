@@ -10,9 +10,7 @@
 import Foundation
 
 class EntryController {
-    //Our shared instance
-    static let shared = EntryController()
-    var entries: [Entry] =  {
+    static var entries: [Entry] =  {
         var entry1 = Entry(title: "Reading", happiness: 7, isIncluded: true)
         var entry2 = Entry(title: "Riding my bike", happiness: 10, isIncluded: false)
         var entry3 = Entry(title: "Waking up", happiness: 1, isIncluded: true)
